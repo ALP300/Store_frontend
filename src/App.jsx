@@ -10,10 +10,8 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // Fetch from local backend to avoid CORS issues during development
-        // Before deploying, remember to change this back to your render URL:
-        // const response = await fetch('https://store-backend-jpze.onrender.com/api/products');
-        const response = await fetch('http://localhost:3000/api/products');
+        // Fetching from the deployed backend on Render
+        const response = await fetch('https://store-backend-jpze.onrender.com/api/products');
         if (!response.ok) {
           throw new Error('Error al cargar los productos');
         }
